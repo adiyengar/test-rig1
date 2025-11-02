@@ -483,7 +483,7 @@ def display_export_options(results):
     
     with col1:
         # JSON export
-        json_str = json.dumps(results, indent=2)
+        json_str = json.dumps(results, indent=2, default=str)
         st.download_button(
             label="📥 Download as JSON",
             data=json_str,
