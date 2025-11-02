@@ -19,7 +19,7 @@ def convert_to_serializable(obj):
     elif isinstance(obj, np.ndarray):
         return obj.tolist()
     elif isinstance(obj, dict):
-        return {key: convert_to_serializable(value) for key, value in obj.items()}
+        return {str(key): convert_to_serializable(value) for key, value in obj.items()}
     elif isinstance(obj, list):
         return [convert_to_serializable(item) for item in obj]
     return obj
