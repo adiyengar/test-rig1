@@ -8,6 +8,21 @@ import plotly.graph_objects as go
 from analyzer import DataQualityAnalyzer
 from config import QUALITY_COLORS, get_quality_level
 import json
+import numpy as np
+
+def convert_to_serializable(obj):
+    """Convert numpy/pandas types to native Python types."""
+    if isinstance(obj, (np.integer, np.int64, np.int32)):
+        return int(obj)
+    elif isinstance(obj, (np.floating, np.float64, np.float32)):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, dict):
+        return {key: convert_to_serializable(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_to_serializable(item) for item in obj]
+    return obj
 
 # Page configuration
 st.set_page_config(
@@ -483,7 +498,7 @@ def display_export_options(results):
     
     with col1:
         # JSON export
-        json_str = json.dumps(results, indent=2, default=str)
+        json_str = json.dumps(convert_to_serializable(results), indent=2)
         st.download_button(
             label="📥 Download as JSON",
             data=json_str,
