@@ -53,7 +53,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 def main():
-    st.title("📊 Data Quality Analyzer")
+    st.title("📊 Index Management Tool")
     st.markdown("### Analyze product catalog data for quality and ML readiness")
     
     # Sidebar

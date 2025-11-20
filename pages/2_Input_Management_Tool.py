@@ -1,4 +1,4 @@
-"""Streamlit web application for input embedding experimentation."""
+"""Streamlit web application for input management."""
 
 import streamlit as st
 import pandas as pd
@@ -60,7 +60,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 def main():
-    st.title("🧪 Input Embedding Experiment Tool")
+    st.title("🧪 Input Management Tool")
     st.markdown("### Test feature combinations and templates to optimize semantic search accuracy")
     
     # Sidebar
