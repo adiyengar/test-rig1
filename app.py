@@ -28,7 +28,7 @@ def convert_to_serializable(obj):
 
 # Page configuration
 st.set_page_config(
-    page_title="Data Quality Analyzer",
+    page_title="Index Management Tool",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"

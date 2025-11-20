@@ -27,7 +27,7 @@ def convert_to_serializable(obj):
 
 # Page configuration
 st.set_page_config(
-    page_title="Input Embedding Experiment Tool",
+    page_title="Input Management Tool",
     page_icon="🧪",
     layout="wide",
     initial_sidebar_state="expanded"
